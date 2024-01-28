@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.eclipse.jetty.http.MimeTypes;
 import tech.qmates.openchat.web.routes.AdminRoute;
 import tech.qmates.openchat.web.routes.BaseRoute;
+import tech.qmates.openchat.web.routes.LoginRoute;
 import tech.qmates.openchat.web.routes.TimelineRoute;
 import tech.qmates.openchat.web.routes.UsersRoute;
 
@@ -42,6 +43,9 @@ public class RouterServlet extends HttpServlet {
 
         if (requestURI.equals("/admin"))
             return new AdminRoute();
+
+        if (requestURI.equals("/login"))
+            return new LoginRoute();
 
         return null;
     }

@@ -16,7 +16,8 @@ public class LoginRoute extends BaseRoute {
     String username = (String) requestBody.get("username");
     String password = (String) requestBody.get("password");
 
-    GetAllUserUseCase usecase = AppFactory.buildGetAllUserUseCase();
+    if (username.isBlank() || password.isBlank()) {
+      textResponse(SC_NOT_FOUND, "Invalid credentials.", response);
+    }
   }
-
 }
