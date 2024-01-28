@@ -2,13 +2,13 @@ package tech.qmates.openchat.web.routes;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import tech.qmates.openchat.AppFactory;
-import tech.qmates.openchat.domain.usecase.GetAllUserUseCase;
 
 import java.io.IOException;
 import java.util.Map;
 
-public class LoginRoute extends BaseRoute{
+import static jakarta.servlet.http.HttpServletResponse.SC_NOT_FOUND;
+
+public class LoginRoute extends BaseRoute {
 
   @Override
   public void handlePost(HttpServletRequest request, HttpServletResponse response) throws IOException {
